@@ -42,7 +42,7 @@ public class Programa {
         //MENORES DE IDADE
         Matcher<Pessoa> menoresDeIdadeAnonimo = new Matcher<Pessoa>(){
             public boolean test(Pessoa p){
-                return p.getIdade() <= 18;
+                return p.getIdade() < 18;
             }
         };
         resultado = filtrador.filtraComMatcher(pessoas, maioresDeIdadeAnonimo);
@@ -56,13 +56,13 @@ public class Programa {
         Predicate<Pessoa> maioresDeIdadeAnonimoComPredicate = new Predicate<Pessoa>(){
 			@Override
 			public boolean test(Pessoa p) {
-				return p.getIdade() >=18;
+				return p.getIdade() >= 18;
 			}
         };
         Predicate<Pessoa> menoresDeIdadeAnonimoComPredicate = new Predicate<Pessoa>(){
 			@Override
 			public boolean test(Pessoa p) {
-				return p.getIdade() <=18;
+				return p.getIdade() < 18;
 			}
         };
         resultado = filtrador.filtraComPredicate(pessoas, maioresDeIdadeAnonimoComPredicate);
@@ -74,10 +74,10 @@ public class Programa {
         //-------------------------------------------------------------------------------------------------------------------
         //Usando expressão lambda, olha que sensacional!! Apenas um trechinho de código para fazer a mesma coisa!!!
         Predicate<Pessoa> maioresDeIdadeLambda = (Pessoa p) -> {
-				return p.getIdade() >=18;
+		return p.getIdade() >= 18;
         };
         Predicate<Pessoa> menoresDeIdadeLambda = (Pessoa p) -> {
-            return p.getIdade() <=18;
+            	return p.getIdade() < 18;
         };
         resultado = filtrador.filtraComPredicate(pessoas, maioresDeIdadeLambda);
         System.out.println(resultado);
@@ -88,7 +88,7 @@ public class Programa {
         //-------------------------------------------------------------------------------------------------------------------
         //É possível colocar tudo em uma linha só quando o corpo do método é pequeno
         Predicate<Pessoa> maioresDeIdadeReduzido = p -> p.getIdade() >=18;
-        Predicate<Pessoa> menoresDeIdadeReduzido = p -> p.getIdade() <=18;
+        Predicate<Pessoa> menoresDeIdadeReduzido = p -> p.getIdade() < 18;
         resultado = filtrador.filtraComPredicate(pessoas, maioresDeIdadeReduzido);
         System.out.println(resultado);
         resultado = filtrador.filtraComPredicate(pessoas, menoresDeIdadeReduzido);
@@ -99,7 +99,7 @@ public class Programa {
         // É possível até mesmo passar a expressão lambda diretamento como parâmetro!!!!
         resultado = filtrador.filtraComPredicate(pessoas, p -> p.getIdade() >=18);
         System.out.println(resultado);
-        resultado = filtrador.filtraComPredicate(pessoas, p -> p.getIdade() <=18);
+        resultado = filtrador.filtraComPredicate(pessoas, p -> p.getIdade() < 18);
         System.out.println(resultado);
         //Olha a facilidade de criar um novo filtro, sem se preocupar em ter que criar classes!!!
         resultado = filtrador.filtraComPredicate(pessoas, p -> p.getNome().startsWith("M"));
