@@ -5,7 +5,7 @@ public class MenoresDeIdade implements Matcher<Pessoa>{
 
     @Override
     public boolean test(Pessoa pessoa) {
-        return pessoa.getIdade() <= 18;
+        return pessoa.getIdade() < 18;
     }
 
 }
