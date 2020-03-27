@@ -1,0 +1,2 @@
+Exemplo do uso da expressão lambda a fim de tornar o código menor e mais legível, diminuindo também a quantidade de classes criadas no sistema, facilitando bastante a manutenção.
+Também será abordado o uso de classes anônimas, indispensável para o entendimento da expressão lambda.
