@@ -96,7 +96,7 @@ public class Programa {
         //-------------------------------------------------------------------------------------------------------------------
 
         //-------------------------------------------------------------------------------------------------------------------
-        // É possível até mesmo passar a expressão lambda diretamento como parâmetro!!!!
+        // É possível até mesmo passar a expressão lambda diretamente como parâmetro!!!!
         resultado = filtrador.filtraComPredicate(pessoas, p -> p.getIdade() >=18);
         System.out.println(resultado);
         resultado = filtrador.filtraComPredicate(pessoas, p -> p.getIdade() < 18);
@@ -107,9 +107,7 @@ public class Programa {
         //-------------------------------------------------------------------------------------------------------------------
 
         //Agora compare esse trecho de código acima usando expressão lambda com o que foi escrito inicialmente, 
-        //lembre-se que foi necessário criar uma classe matcher e uma classe MaioresDeIdade, além de ter o 
-        //trabalho de instanciar os objetos das classes para o main, caso você queira fazer o filtro por alguma
-        //outra lógica, seria necessário a criação de outra classe.
+        //lembre-se que foi necessário criar uma classe matcher e duas classes: MaioresDeIdade e MenoresDeIdade.
         //Usando expressão lambda, tudo fica mais fácil e mais prático, além de ajudar na hora da manutenção do código.
     }
 }
