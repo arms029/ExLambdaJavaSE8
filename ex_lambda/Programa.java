@@ -27,9 +27,9 @@ public class Programa {
         Matcher<Pessoa> maioresDeIdade = new MaioresDeIdade();
         Matcher<Pessoa> menoresDeIdade = new MenoresDeIdade();
         resultado = filtrador.filtraComMatcher(pessoas, maioresDeIdade);
-        System.out.println(resultado);
+        System.out.println(resultado); //Mario, Gui, Maria
         resultado = filtrador.filtraComMatcher(pessoas, menoresDeIdade);
-        System.out.println(resultado);
+        System.out.println(resultado); //Joao, Alicia
         //-------------------------------------------------------------------------------------------------------------------
 
         //-------------------------------------------------------------------------------------------------------------------
@@ -46,9 +46,9 @@ public class Programa {
             }
         };
         resultado = filtrador.filtraComMatcher(pessoas, maioresDeIdadeAnonimo);
-        System.out.println(resultado);
+        System.out.println(resultado); //Mario, Gui, Maria
         resultado = filtrador.filtraComMatcher(pessoas, menoresDeIdadeAnonimo);
-        System.out.println(resultado);
+        System.out.println(resultado); //Joao, Alicia
         //-------------------------------------------------------------------------------------------------------------------
 
         //-------------------------------------------------------------------------------------------------------------------
@@ -66,9 +66,9 @@ public class Programa {
 			}
         };
         resultado = filtrador.filtraComPredicate(pessoas, maioresDeIdadeAnonimoComPredicate);
-        System.out.println(resultado);
+        System.out.println(resultado); //Mario, Gui, Maria
         resultado = filtrador.filtraComPredicate(pessoas, menoresDeIdadeAnonimoComPredicate);
-        System.out.println(resultado);
+        System.out.println(resultado); //Joao, Alicia
         //-------------------------------------------------------------------------------------------------------------------
 
         //-------------------------------------------------------------------------------------------------------------------
@@ -80,9 +80,9 @@ public class Programa {
             	return p.getIdade() < 18;
         };
         resultado = filtrador.filtraComPredicate(pessoas, maioresDeIdadeLambda);
-        System.out.println(resultado);
+        System.out.println(resultado); //Mario, Gui, Maria
         resultado = filtrador.filtraComPredicate(pessoas, menoresDeIdadeLambda);
-        System.out.println(resultado);
+        System.out.println(resultado); //Joao, Alicia
         //-------------------------------------------------------------------------------------------------------------------
 
         //-------------------------------------------------------------------------------------------------------------------
@@ -90,20 +90,20 @@ public class Programa {
         Predicate<Pessoa> maioresDeIdadeReduzido = p -> p.getIdade() >=18;
         Predicate<Pessoa> menoresDeIdadeReduzido = p -> p.getIdade() < 18;
         resultado = filtrador.filtraComPredicate(pessoas, maioresDeIdadeReduzido);
-        System.out.println(resultado);
+        System.out.println(resultado); //Mario, Gui, Maria
         resultado = filtrador.filtraComPredicate(pessoas, menoresDeIdadeReduzido);
-        System.out.println(resultado);
+        System.out.println(resultado); //Joao, Alicia
         //-------------------------------------------------------------------------------------------------------------------
 
         //-------------------------------------------------------------------------------------------------------------------
         // É possível até mesmo passar a expressão lambda diretamente como parâmetro!!!!
         resultado = filtrador.filtraComPredicate(pessoas, p -> p.getIdade() >=18);
-        System.out.println(resultado);
+        System.out.println(resultado); //Mario, Gui, Maria
         resultado = filtrador.filtraComPredicate(pessoas, p -> p.getIdade() < 18);
-        System.out.println(resultado);
+        System.out.println(resultado); //Joao, Alicia
         //Olha a facilidade de criar um novo filtro, sem se preocupar em ter que criar classes!!!
         resultado = filtrador.filtraComPredicate(pessoas, p -> p.getNome().startsWith("M"));
-        System.out.println(resultado);
+        System.out.println(resultado); //Mario, Maria
         //-------------------------------------------------------------------------------------------------------------------
 
         //Agora compare esse trecho de código acima usando expressão lambda com o que foi escrito inicialmente, 
